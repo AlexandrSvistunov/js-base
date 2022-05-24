@@ -1,0 +1,12 @@
+body {
+  font-size: 42px;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:hover {
+  color: brown;
+  text-decoration: underline;
+}
