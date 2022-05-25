@@ -1,0 +1,16 @@
+body {
+  font-size: 42px;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+li a {
+  text-decoration: none;
+}
+
+li a:hover {
+  color: brown;
+  text-decoration: underline;
+}
