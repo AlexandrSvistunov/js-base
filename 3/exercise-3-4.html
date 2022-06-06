@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Exercise-3-4</title>
+</head>
+<body>
+  <a class="main" href="../index.html">На главную</a>
+      
+  <div class="menu-4"></div>
+
+  <!-- Задание. Добавьте в div с классом .menu следующую разметку:
+  <a href="#">link</a>
+  используя метод insertAdjacentHTML.
+  -->
+
+<script>
+  'use strict'
+  let menu = document.querySelector('.menu-4');
+  menu.insertAdjacentHTML('afterbegin', '<a href="#">link</a>')
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Exercise-5-2</title>
+</head>
+<body>
+  <a class="main" href="../index.html">На главную</a>
+  
+  <h3 class="one">Заголовок</h3>
+    <a class="one" href="#">ссылка</a>
+    <p class="one">параграф</p>
+
+    <!-- Задание.
+    1. Сохраните в переменную коллекцию элементов с классом one. Для получения
+    элементов используйте метод. getElementsByClassName() 
+    2. С помощью цикла переберите эту коллекцию и выведите в консоль название тега.
+    -->
+
+<script>
+  'use strict'
+  let one = document.getElementsByClassName('one');
+  for (let i = 0; i < one.length; i++) {
+    console.log(one[i].tagName);
+  }
+</script>
+</body>
+</html>

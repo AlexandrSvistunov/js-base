@@ -1,16 +1,67 @@
 body {
-  font-size: 42px;
+  font-size: 30px;
 }
 
 h1, h2, h3 {
   text-align: center;
 }
 
-li a {
+.main {
   text-decoration: none;
 }
 
-li a:hover {
+a {
+  display: block;
+}
+
+a:hover {
   color: brown;
-  text-decoration: underline;
+  text-decoration: none;
+}
+
+img {
+  width: 100px;
+}
+
+.box {
+  border: 1px solid green;
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.one {
+  color:aqua;
+}
+
+.active {
+  color: red;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: none;
+}
+
+.dropdown-menu {
+  display: block;
+}
+
+.green {
+  color: green;
+}
+
+i {
+  display: block;
+}
+
+p, .modal, textarea, .product {
+  cursor: pointer;
 }
