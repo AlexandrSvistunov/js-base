@@ -1,5 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-size: 30px;
+  font-size: 30px
 }
 
 h1, h2, h3 {
@@ -48,6 +52,11 @@ img {
 
 .menu {
   display: none;
+}
+
+.goToTop{
+  text-decoration: none;
+  color: black;
 }
 
 .dropdown-menu {
