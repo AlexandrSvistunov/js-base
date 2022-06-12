@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <title>2-очистка_с_помощью_innerHTML</title>
+</head>
+<body>
+    <a class="main" href="../index.html">На главную</a>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing.
+    </p>
+
+    <!-- 
+    Задание. С помощью innerHTML очистите содержимое параграфа.
+    -->
+
+    <script>
+        'use strict'
+        let p = document.querySelector('p');
+        p.innerHTML = '';
+    </script>
+</body>
+</html>
