@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css" />
+    <title>2-создание_разметки</title>
+</head>
+<body>
+    <a class="main" href="../index.html">На главную</a>
+    <!-- <img src="https://picsum.photos/200/300?random=1" alt="pic1">
+    <img src="https://picsum.photos/200/300?random=2" alt="pic2">
+    <img src="https://picsum.photos/200/300?random=3" alt="pic3"> -->
+        <style>
+            img {
+                margin-right: 20px;
+            }
+        </style>
+    <script>
+        "use strict"
+        /* 
+        Задание.
+        С помощью цилка for добавьте в body 6 картинок, по примеру тех, что закомментированы
+        выше. Картинки вставляйте со помощью insertAdjacentHTML. При генерации разметки
+        пользуйтесь шаблонным литералом. Куда должен вставляться счетчик цилка смотрите
+        ниже:
+        <img src="https://picsum.photos/200/300?random=${счетчик_цикла_здесь}" alt="pic${счетчик_цикла_здесь}">
+        */
+       
+        for (let i = 1; i <= 6; i++) {
+            let img = `<img src="https://picsum.photos/200/300?random=${i}" alt="pic${i}">`;
+            document.body.insertAdjacentHTML("beforeend", img);
+        }
+    </script>
+</body>
+</html>
