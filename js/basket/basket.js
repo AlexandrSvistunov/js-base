@@ -1,17 +1,16 @@
-'use strict';
+"use strict";
 
-const openBasketBtn = document.querySelector('.cartIconWrap');
-const basketEl = document.querySelector('.basket');
-const basketCounterEl = document.querySelector('.cartIconWrap span');
-const basketTotalEl = document.querySelector('.basketTotal');
-const basketTotalValueEl = document.querySelector('.basketTotalValue');
+const openBasketBtn = document.querySelector(".cartIconWrap");
+const basketEl = document.querySelector(".basket");
+const basketCounterEl = document.querySelector(".cartIconWrap span");
+const basketTotalEl = document.querySelector(".basketTotal");
+const basketTotalValueEl = document.querySelector(".basketTotalValue");
 let productId = null;
-let productName = '';
-let productPrice = '';
+let productName = "";
+let productPrice = "";
 
-
-openBasketBtn.addEventListener('click', function () {
-    basketEl.classList.toggle('hidden');
+openBasketBtn.addEventListener("click", function () {
+    basketEl.classList.toggle("hidden");
 });
 
 /**
@@ -22,19 +21,6 @@ openBasketBtn.addEventListener('click', function () {
     3: 2
  }
  */
- function getProductData(event) {
-    productId = event.currentTarget.getAttribute("data-productId");
-    productName =
-        event.currentTarget.parentNode.parentNode.nextElementSibling.querySelector(
-            ".featuredName"
-        ).textContent;
-    productPrice =
-        event.currentTarget.parentNode.parentNode.nextElementSibling.querySelector(
-            ".featuredPrice"
-        ).textContent;
-    productPrice = Number(productPrice.replace("$", "")).toFixed(2);
-}
-
 
 let basket = {};
 
@@ -50,13 +36,26 @@ function addProductToObject(productId) {
     }
 }
 
+function getProductData(event) {
+    productId = event.currentTarget.getAttribute("data-productId");
+    productName =
+        event.currentTarget.parentNode.parentNode.nextElementSibling.querySelector(
+            ".featuredName"
+        ).textContent;
+    productPrice =
+        event.currentTarget.parentNode.parentNode.nextElementSibling.querySelector(
+            ".featuredPrice"
+        ).textContent;
+    productPrice = Number(productPrice.replace("$", "")).toFixed(2);
+}
+
 /**
  * Функция срабатывает когда нужно отрисовать продукт в корзине.
  * @param {number} productId
  */
 function renderProductInBasket(productId) {
     let productExist = document.querySelector(
-    `.productCount[data-productId="${productId}"]`
+        `.productCount[data-productId="${productId}"]`
     );
     if (productExist) {
         increaseProductCount(productId);
@@ -93,10 +92,9 @@ function renderNewProductInBasket(productId) {
  */
 function increaseProductCount(productId) {
     const productCountEl = document.querySelector(
-    `.productCount[data-productId="${productId}"]`
+        `.productCount[data-productId="${productId}"]`
     );
     productCountEl.textContent++;
-
 }
 
 /**
@@ -106,7 +104,7 @@ function increaseProductCount(productId) {
  */
 function calcSumForProduct(productId) {
     const productTotalRowEl = document.querySelector(
-    `.productTotalRow[data-productId="${productId}"]`
+        `.productTotalRow[data-productId="${productId}"]`
     );
 
     let totalPriceForRow = (basket[productId] * productPrice).toFixed(2);
@@ -141,4 +139,3 @@ function addProductIntoBasket(productId) {
     increaseProductsCount();
     addProductToObject(productId);
 }
-
