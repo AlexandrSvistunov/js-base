@@ -15,58 +15,13 @@ function addEventListenersForAddToCartButtons() {
  * @param {MouseEvent} event
  */
 function addedProductHandler(event) {
-    const productId = event.currentTarget.getAttribute("data-productId");
-    let productName =
-        event.currentTarget.parentNode.parentNode.nextElementSibling.querySelector(
-            ".featuredName"
-        ).textContent;
-    let productPrice =
-        event.currentTarget.parentNode.parentNode.nextElementSibling.querySelector(
-            ".featuredPrice"
-        ).textContent;
-    productPrice = Number(productPrice.replace("$", "")).toFixed(2);
+    getProductData(event);
 
     addProductIntoBasket(productId);
 
-    let productExist = document.querySelector(
-        `.productCount[data-productId="${productId}"]`
-    );
-    if (productExist) {
-        const productCountEl = document.querySelector(
-            `.productCount[data-productId="${productId}"]`
-        );
-        productCountEl.textContent++;
+    renderProductInBasket(productId);
 
-        const productTotalRowEl = document.querySelector(
-            `.productTotalRow[data-productId="${productId}"]`
-        );
-
-        let totalPriceForRow = (basket[productId] * productPrice).toFixed(2);
-        productTotalRowEl.textContent = totalPriceForRow;
-    } else {
-        let productRow = `
-            <div class="basketRow">
-                <div>${productName}</div>
-                <div>
-                    <span class="productCount" data-productId="${productId}">1</span> шт.
-                </div>
-                <div>$${productPrice}</div>
-                <div>
-                    $<span class="productTotalRow" data-productId="${productId}">${productPrice}</span>
-                </div>
-            </div>
-        `;
-
-        basketTotalEl.insertAdjacentHTML("beforebegin", productRow);
-    }
-
-    let totalSum = 0;
-    let sums = document.querySelectorAll(".productTotalRow");
-    sums.forEach((element) => {
-        totalSum += +element.textContent;
-    });
-
-    basketTotalValueEl.textContent = totalSum.toFixed(2);
+    calcTotalSum();
 }
 
 addEventListenersForAddToCartButtons();
